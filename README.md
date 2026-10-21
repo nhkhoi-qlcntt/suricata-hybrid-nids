@@ -224,27 +224,7 @@ liệu mô phỏng:
 | Hybrid pipeline (SNIDS + ADNIDS) | Kiểm chứng lợi ích bù trừ của mô hình lai | Mục 4.1, 7.1 |
 | Mô phỏng Zero-day | Định lượng hạn chế khi gặp tấn công hoàn toàn mới | Mục 2.4, 7.2, 7.3 |
 
-## 8. Câu hỏi thường gặp
 
-**Hỏi: Chạy bị lỗi "ModuleNotFoundError: No module named 'sklearn'"?**
-→ Chưa cài thư viện. Chạy lại `pip install -r requirements.txt`.
-
-**Hỏi: Kết quả mỗi lần chạy có giống nhau không?**
-→ Có. Toàn bộ quá trình sinh dữ liệu và huấn luyện đều cố định `random_state/
-seed = 42`, nên chạy lại nhiều lần sẽ cho đúng cùng một kết quả.
-
-**Hỏi: Có cần cài Suricata thật không?**
-→ Không. `signature_engine.py` mô phỏng SNIDS bằng các luật ngưỡng viết bằng
-Python, có cấu trúc tương ứng với cú pháp luật Suricata (xem Mục 2.3 của tiểu
-luận), không cần cài đặt Suricata thật.
-
-**Hỏi: Chạy `run_all.sh` bị lỗi "Permission denied"?**
-→ File chưa có quyền thực thi. Chạy `chmod +x run_all.sh` một lần, rồi chạy
-lại `./run_all.sh`. Hoặc chạy trực tiếp bằng `bash run_all.sh` mà không cần
-`chmod`.
-
-**Hỏi: Giao diện trực quan (`live_demo.py`) chạy bị lỗi hoặc không hiện màu?**
-→ Nếu terminal không hỗ trợ màu/Unicode (ví dụ một số terminal Windows cũ),
 script tự động chuyển sang chế độ in văn bản đơn giản, vẫn chạy được đầy đủ,
 không bị dừng. Nếu muốn giao diện đầy màu, nên chạy trong terminal hiện đại
 (Windows Terminal, macOS Terminal/iTerm2, hầu hết terminal Linux).
